@@ -7,7 +7,10 @@
     "lib": ["ES2022", "DOM"],
     "strict": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["server.ts", "src/**/*.ts"]
+  "include": ["build.ts", "src/**/*.ts"]
 }
