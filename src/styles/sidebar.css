@@ -1,0 +1,33 @@
+#sidebar {
+  background-color: var(--sidebar);
+  display: flex;
+  flex-flow: column;
+  gap: 0;
+}
+
+.sidebar-button {
+  background-color: var(--sidebar);
+  color: var(--sidebar-foreground);
+  fill: var(--sidebar-foreground);
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-button:hover {
+  background-color: var(--sidebar-accent);
+  color: var(--sidebar-accent-foreground);
+  fill: var(--sidebar-accent-foreground);
+}
+
+.sidebar-radio {
+  display: none;
+}
+
+.sidebar-radio:checked + .sidebar-button {
+  background-color: var(--sidebar-primary);
+  color: var(--sidebar-primary-foreground);
+  fill: var(--sidebar-primary-foreground);
+}

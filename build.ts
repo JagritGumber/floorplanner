@@ -12,20 +12,24 @@ await Bun.build({
             filter: /\.html$/,
           },
           async (args) => {
-            let html = await readFile(args.path, "utf-8");
+            const processHtml = async (filePath: string) => {
+              let html = await readFile(filePath, "utf-8");
+              const regex = /<!--SLOT:(.*?)-->/g;
+              const matches = [...html.matchAll(regex)];
 
-            const regex = /<!--SLOT:(.*?)-->/g;
-            const matches = [...html.matchAll(regex)];
-
-            for (const match of matches) {
-              const [fullMatch, path] = match;
-              try {
-                const content = await readFile(path.trim(), "utf-8");
-                html = html.replaceAll(fullMatch, content);
-              } catch (error) {
-                console.error(`Failed to inject slot: ${path}`, error);
+              for (const match of matches) {
+                const [fullMatch, path] = match;
+                try {
+                  const content = await processHtml(path.trim());
+                  html = html.replaceAll(fullMatch, content);
+                } catch (error) {
+                  console.error(`Failed to inject slot: ${path}`, error);
+                }
               }
-            }
+              return html;
+            };
+
+            const html = await processHtml(args.path);
 
             return {
               contents: html,
