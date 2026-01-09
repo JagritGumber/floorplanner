@@ -1,61 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pure HTML (Bun)</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-      }
-      body {
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        margin: 0;
-        padding: 24px;
-      }
-      .row {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      button {
-        padding: 8px 12px;
-        border-radius: 10px;
-        border: 1px solid color-mix(in oklab, currentColor 25%, transparent);
-        background: transparent;
-        cursor: pointer;
-      }
-      button:hover {
-        background: color-mix(in oklab, currentColor 8%, transparent);
-      }
-      pre {
-        padding: 12px;
-        border-radius: 12px;
-        background: color-mix(in oklab, currentColor 6%, transparent);
-        overflow: auto;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floor Planner</title>
   </head>
-  <body>
-    <h1>Pure HTML app (served by Bun)</h1>
-    <p>Everything here is plain HTML/CSS/JS; no TSX/React.</p>
-
-    <div class="row">
-      <div>Count: <strong id="count">0</strong></div>
-      <button id="inc" type="button">Increment</button>
-      <button id="reset" type="button">Reset</button>
-    </div>
-
-    <h2>API</h2>
-    <div class="row">
-      <button id="hello" type="button">GET /api/hello</button>
-      <div id="helloResult"></div>
-    </div>
-
-    <h2>State</h2>
-    <pre id="state"></pre>
-
-    <script type="module" src="./index.ts"></script>
-  </body>
+  <body></body>
 </html>
